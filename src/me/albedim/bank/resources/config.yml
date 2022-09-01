@@ -1,0 +1,24 @@
+database:
+ db-host: "localhost"
+ db-name: "minecraft"
+ db-port: "3306"
+ db-username: "root"
+ db-password: ""
+
+configuration:
+ default-balance: "50"
+ permissions-name: "bank.admin"
+
+messages:
+ transfer-completed: " §aBonifico avvenuto con successo!"
+ no-enough-money: " §cNon hai abbastanza soldi per completare quest'operazione"
+ user-no-enough-money: " §cIl giocatore non ha abbastanza soldi"
+ transfer-deleted: " §aBonifico eliminato con successo!"
+ money-added: " §aHai aggiunto correttamente dei soldi a questo conto"
+ money-taken: " §aHai tolto correttamente dei soldi da questo conto"
+ deposited-money: " §aHai depositato correttamente %money%"
+ iban-not-exists: " §cNon esistono conti correnti con questo iban"
+ auto-transfer: " §cNon puoi fare dei bonifici a te stesso"
+ withdrawn-money: " §aHai prelevato correttamente %money%"
+ wrong-command-use: " §cUso scorretto del comando!"
+ no-permissions: " §cNon hai i permessi per usare qeusto comando!"

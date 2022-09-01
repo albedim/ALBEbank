@@ -1,7 +1,10 @@
 name: ALBEbank
 description: "A simple plugin to manage money in the most realistic way possible"
 main: me.albedim.bank.Main
-version: 1.0.5 P
+version: 1.0.5 Performance optimizations
+versions:
+  - " 1.0.5 - Performance optimizations"
+  - " 1.0.0 - Beta Version"
 author: albedim
 api-version: 1.18
 commands:

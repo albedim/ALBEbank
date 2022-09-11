@@ -15,9 +15,11 @@ import static me.albedim.bank.Main.userdata;
  *  Last Update -
  */
 
-public class Items {
+public class Items 
+{
 
-    public ItemStack createMoney(String money) {
+    public ItemStack createMoney(String money) 
+    {
 
         Material id = Material.AIR;
         String display = "";
@@ -63,7 +65,8 @@ public class Items {
 
     }
 
-    public ItemStack createBankStmt(String iban) {
+    public ItemStack createBankStmt(String iban) 
+    {
 
         @SuppressWarnings("deprecation")
         ItemStack item = new ItemStack(Material.PAPER, 1, (short) 1);
@@ -82,11 +85,13 @@ public class Items {
 
     }
 
-    public void subtractMoney(Player player) {
+    public void subtractMoney(Player player) 
+    {
         player.getInventory().getItemInMainHand().setAmount(player.getInventory().getItemInMainHand().getAmount() - 1);
     }
 
-    public void addMoney(Player player, ItemStack item) {
+    public void addMoney(Player player, ItemStack item) 
+    {
         player.getInventory().addItem(item);
     }
 

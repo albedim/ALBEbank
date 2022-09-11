@@ -13,15 +13,18 @@ import java.util.List;
  *  Last Update -
  */
 
-public class Atm {
+public class Atm 
+{
 
     private Player player;
 
-    public Atm(Player player) {
+    public Atm(Player player) 
+    {
         this.player = player;
     }
 
-    public ItemStack createButton(Material id, short data, int amount, List<String> lore, String display) {
+    public ItemStack createButton(Material id, short data, int amount, List<String> lore, String display) 
+    {
 
         @SuppressWarnings("deprecation")
         ItemStack item = new ItemStack(id, amount, data);
@@ -34,7 +37,8 @@ public class Atm {
 
     }
 
-    public void openHomePage() {
+    public void openHomePage() 
+    {
 
         Inventory inv = Bukkit.createInventory(null, 45, "§8ATM");
         inv.setItem(21, createButton(Material.GHAST_TEAR, (short) 1, 1, null, "§7Preleva"));
@@ -44,7 +48,8 @@ public class Atm {
 
     }
 
-    public void openMoneyPage() {
+    public void openMoneyPage() 
+    {
 
         Inventory inv = Bukkit.createInventory(null,45, "§8ATM Preleva");
         inv.setItem(19, createButton(Material.GRAY_DYE, (short) 1, 1, null, "§7€5"));

@@ -16,14 +16,16 @@ import java.util.ArrayList;
  *  Last Update 01/09/22
  */
 
-public class Main extends JavaPlugin {
+public class Main extends JavaPlugin 
+{
 
     public static Main plugin;
     public static Config config;
     public static UserData userdata;
     public static ArrayList<String> inTransfer = new ArrayList<String>();
 
-    public void onEnable() {
+    public void onEnable() 
+    {
 
         plugin = this;
         this.config = new Config();
@@ -47,11 +49,13 @@ public class Main extends JavaPlugin {
 
     }
 
-    public void onDisable() {
+    public void onDisable() 
+    {
         config.disconnect();
     }
 
-    public static Main getInstance() {
+    public static Main getInstance() 
+    {
         return plugin;
     }
 

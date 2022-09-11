@@ -15,12 +15,14 @@ import static me.albedim.bank.Main.userdata;
  *  Last Update 01/09/22
  */
 
-public class InventoryEvent implements Listener {
+public class InventoryEvent implements Listener 
+{
 
     private Items items = new Items();
 
     @EventHandler
-    public void onInventoryClick(InventoryClickEvent e) {
+    public void onInventoryClick(InventoryClickEvent e) 
+    {
 
         Player player = (Player) e.getWhoClicked();
 
@@ -111,7 +113,8 @@ public class InventoryEvent implements Listener {
 
     }
 
-    public String getCardIban(Player player) {
+    public String getCardIban(Player player) 
+    {
         return player.getInventory().getItemInMainHand().getItemMeta().getLore().get(0).substring(6);
     }
 

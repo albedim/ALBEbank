@@ -9,9 +9,11 @@ import static me.albedim.bank.Main.config;
  *  Last Update 01/09/22
  */
 
-public class UserData {
+public class UserData 
+{
 
-    public void addAccount(String player, double defaultBalance) {
+    public void addAccount(String player, double defaultBalance) 
+    {
         try {
             PreparedStatement stmt = config.getConnection().prepareStatement("INSERT INTO bank_accounts VALUES(?,?,?)");
             stmt.setString(1, this.createIban());
@@ -23,7 +25,8 @@ public class UserData {
         }
     }
 
-    public boolean hasAccount(String player) {
+    public boolean hasAccount(String player) 
+    {
         try {
             PreparedStatement stmt = config.getConnection().prepareStatement("SELECT * FROM bank_accounts WHERE owner = ?");
             stmt.setString(1, player);
@@ -39,7 +42,8 @@ public class UserData {
         return false;
     }
 
-    public String getIban(String player) {
+    public String getIban(String player) 
+    {
         try {
             PreparedStatement stmt = config.getConnection().prepareStatement("SELECT * FROM bank_accounts WHERE owner = ?");
             stmt.setString(1, player);
@@ -55,7 +59,8 @@ public class UserData {
         return null;
     }
 
-    public void takeMoney(String iban, int money) {
+    public void takeMoney(String iban, int money) 
+    {
         try {
             PreparedStatement stmt = config.getConnection().prepareStatement("UPDATE bank_accounts SET balance = ? WHERE IBAN = ?");
             stmt.setDouble(1, this.getBalance(iban) - money);
@@ -68,7 +73,8 @@ public class UserData {
 
     }
 
-    public void addMoney(String iban, int money) {
+    public void addMoney(String iban, int money) 
+    {
         try {
             PreparedStatement stmt = config.getConnection().prepareStatement("UPDATE bank_accounts SET balance = ? WHERE IBAN = ?");
             stmt.setDouble(1, this.getBalance(iban) + money);
@@ -81,11 +87,13 @@ public class UserData {
 
     }
 
-    public boolean hasMoney(String iban, int money) {
+    public boolean hasMoney(String iban, int money) 
+    {
         return this.getBalance(iban) - money >= 0;
     }
 
-    public double getBalance(String iban) {
+    public double getBalance(String iban) 
+    {
         try {
             PreparedStatement stmt = config.getConnection().prepareStatement("SELECT * FROM bank_accounts WHERE IBAN = ?");
             stmt.setString(1, iban);
@@ -101,7 +109,8 @@ public class UserData {
         return -1;
     }
 
-    private String createIban() {
+    private String createIban() 
+    {
         String letters = "ABCDEFGHILMNOPQRSTUVZWYJKX";
         String numbers = "0123456789";
         String iban = "";
@@ -118,7 +127,8 @@ public class UserData {
         return iban;
     }
 
-    public String getUserByIban(String iban) {
+    public String getUserByIban(String iban) 
+    {
         try {
             PreparedStatement stmt = config.getConnection().prepareStatement("SELECT * FROM bank_accounts WHERE IBAN = ?");
             stmt.setString(1, iban);
@@ -134,7 +144,8 @@ public class UserData {
         return null;
     }
 
-    public boolean ibanExists(String iban) {
+    public boolean ibanExists(String iban) 
+    {
         try {
             PreparedStatement stmt = config.getConnection().prepareStatement("SELECT * FROM bank_accounts WHERE IBAN = ?");
             stmt.setString(1, iban);

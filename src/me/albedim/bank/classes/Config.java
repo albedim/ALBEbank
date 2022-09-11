@@ -11,7 +11,8 @@ import java.sql.Statement;
  *  Last Update -
  */
 
-public class Config {
+public class Config 
+{
 
     private Connection connection;
     private String host = Main.getInstance().getConfig().getString("database.db-host");
@@ -20,18 +21,21 @@ public class Config {
     private String username = Main.getInstance().getConfig().getString("database.db-username");
     private String password = Main.getInstance().getConfig().getString("database.db-password");
 
-    public boolean isConnected() {
+    public boolean isConnected() 
+    {
         return connection != null;
     }
 
-    public void connect() throws ClassNotFoundException, SQLException {
+    public void connect() throws ClassNotFoundException, SQLException 
+    {
         if (!isConnected()) {
             this.connection = DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "/" + database + "?useSSL=false", username, password);
             this.createUsersTable();
         }
     }
 
-    public void disconnect() {
+    public void disconnect() 
+    {
         if (!isConnected()) {
             return;
         }
@@ -42,11 +46,13 @@ public class Config {
         }
     }
 
-    public Connection getConnection() {
+    public Connection getConnection() 
+    {
         return this.connection;
     }
 
-    private void createUsersTable() throws SQLException {
+    private void createUsersTable() throws SQLException 
+    {
         String sql = "CREATE TABLE IF NOT EXISTS `bank_accounts` (`IBAN` VARCHAR(255) NOT NULL, `owner` VARCHAR(255) NOT NULL, `balance` double NOT NULL);";
         Statement st = this.connection.createStatement();
         st.execute(sql);

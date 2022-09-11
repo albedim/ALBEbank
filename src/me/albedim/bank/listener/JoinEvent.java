@@ -12,10 +12,12 @@ import static me.albedim.bank.Main.userdata;
  *  Last Update 01/09/22
  */
 
-public class JoinEvent implements Listener {
+public class JoinEvent implements Listener 
+{
 
     @EventHandler
-    public void onJoin(PlayerJoinEvent e) {
+    public void onJoin(PlayerJoinEvent e) 
+    {
         if (!userdata.hasAccount(e.getPlayer().getName()))
             userdata.addAccount(
                     e.getPlayer().getName(),

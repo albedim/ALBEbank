@@ -21,10 +21,12 @@ import static me.albedim.bank.Main.userdata;
  *  Last Update 01/09/22
  */
 
-public class Commands implements CommandExecutor {
+public class Commands implements CommandExecutor 
+{
 
     @Override
-    public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
+    public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) 
+    {
 
         if (cmd.getName().equals("card")) {
             if (!sender.hasPermission(Main.getInstance().getConfig().getString("configuration.permissions-name"))) {
@@ -141,7 +143,8 @@ public class Commands implements CommandExecutor {
         return false;
     }
 
-    public ItemStack createCard(String player) {
+    public ItemStack createCard(String player) 
+    {
 
         ItemStack item = new ItemStack(Material.PAPER, 1, (short) 1);
         ItemMeta meta = item.getItemMeta();

@@ -17,12 +17,14 @@ import static me.albedim.bank.Main.userdata;
  *  Last Update 01/09/22
  */
 
-public class InteractEvent implements Listener {
+public class InteractEvent implements Listener 
+{
 
     private Items items = new Items();
 
     @EventHandler
-    public void onInteract(PlayerInteractEvent e) {
+    public void onInteract(PlayerInteractEvent e) 
+    {
 
         if (e.getAction().equals(Action.RIGHT_CLICK_BLOCK)) {
             if (e.getClickedBlock().getType().equals(Material.WARPED_PLANKS)) {
